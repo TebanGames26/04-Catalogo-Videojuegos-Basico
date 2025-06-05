@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!-- Indica que el documento está escrito en HTML5 -->
+<html lang="es">
+<!-- Establece el idioma del contenido como español -->
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- Define la codificación de caracteres como UTF-8 (soporta tildes, eñes, etc.) -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Ajusta el sitio para que sea responsive en dispositivos móviles -->
+
+  <title>Catálogo de Videojuegos</title>
+  <!-- Título que aparece en la pestaña del navegador -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Vincula el framework Bootstrap para estilos y componentes responsivos -->
+
+  <link rel="stylesheet" href="css.css" />
+  <!-- Vincula el archivo CSS personalizado -->
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="70" tabindex="0">
+  <!-- Activación del scrollspy de Bootstrap para navegación automática al hacer scroll -->
+
+  <!-- Barra de navegación fija superior -->
+  <nav id="navbar-example" class="navbar navbar-light bg-light px-3 fixed-top">
+    <a class="navbar-brand" href="#">Catálogo</a>
+    <!-- Logo o título del navbar -->
+
+    <ul class="nav nav-pills">
+      <!-- Lista de navegación tipo "píldoras" -->
+      <li class="nav-item">
+        <a class="nav-link" href="#catalogo">Catálogo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#generos">Géneros</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Sección inicial con botón de menú lateral -->
+  <section id="inicio" class="pt-5 mt-5 px-3">
+    <div>
+      <!-- Botón que activa el offcanvas -->
+      <button class="btn btn- mb-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="menu">
+        &#9776; <!-- Ícono de "hamburguesa" -->
+      </button>
+    </div>
+
+    <!-- Menú lateral Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="menu" aria-labelledby="menuLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="menuLabel">Menu</h5>
+        <!-- Título del menú -->
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+        <!-- Botón de cierre -->
+      </div>
+
+      <div class="offcanvas-body">
+        <ul>
+          <!-- Enlaces del menú -->
+          <li><a class="btn" href="index.html">Inicio</a></li>
+          <li><a class="btn" href="accion.html">Acción</a></li>
+
+          <!-- Botón con popover -->
+          <li>
+            <button type="button" class="btn" data-bs-toggle="popover" title="Sugerencia"
+              data-bs-content="¡Explora los juegos más populares RPG del año!" id="popoverButton">¿Qué jugar?</button>
+          </li>
+
+          <!-- Botón que abre una ventana modal personalizada -->
+          <li>
+            <button id="btnMod" class="btn">Ver información</button>
+            <div id="mod" class="modal">
+              <div class="modal-content">
+                <span class="cerrar">&times;</span>
+                <!-- Botón de cerrar modal -->
+                <h2>Acerca del Catálogo</h2>
+                <p>Este catálogo incluye juegos RPG organizados por popularidad.</p>
+              </div>
+            </div>
+          </li>
+
+          <!-- Botón que activa un Toast (notificación flotante) -->
+          <li>
+            <button onclick="mostrarToast()" class="btn">Mensaje</button>
+            <div id="miToast" class="toast position-fixed top-0 end-0 m-3" role="alert">
+              <div class="toast-body">
+                Bienvenido al catálogo de videojuegos RPG más populares.
+              </div>
+            </div>
+          </li>
+
+          <!-- Botón que lanza una alerta con JavaScript -->
+          <li>
+            <div id="liveAlertPlaceholder"></div>
+            <button type="button" class="btn" id="liveAlertBtn">Alerta de novedad</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Título de la sección RPG -->
+  <section class="pt-5 mt-5 text-center">
+    <h1 class="titulo-catalogo"><strong>Videojuegos RPG</strong></h1>
+  </section>
+
+  <!-- Sección del catálogo de juegos RPG -->
+  <section id="catalogo" class="container my-4 pt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <!-- Tarjetas de juegos -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="img\rol\Zelda.jpg" style="width: 415px; height: 500px;" class="card-img-top" alt="Zelda">
+          <div class="card-body">
+            <h5 class="card-title">The Legend of Zelda</h5>
+            <p class="card-text">Una aventura épica llena de misterio y acción.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Repite el mismo patrón para cada juego -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="img\rol\the witcher 3.avif" style="width: 415px; height: 500px;" class="card-img-top"
+            alt="The witcher 3">
+          <div class="card-body">
+            <h5 class="card-title">The witcher 3</h5>
+            <p class="card-text">Un RPG de acción aclamado por la crítica con un mundo abierto rico en detalles.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img src="img\rol\assassings creed.jpg" style="width: 415px; height: 500px;" class="card-img-top"
+            alt="Assassin's Creed">
+          <div class="card-body">
+            <h5 class="card-title">Assassin's Creed</h5>
+            <p class="card-text">Un viaje a través de la historia con un enfoque en el sigilo y la acción.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img src="img\rol\Final.jpg" style="width: 415px; height: 500px;" class="card-img-top"
+            alt="Final Fantasy XV">
+          <div class="card-body">
+            <h5 class="card-title">Final Fantasy XV</h5>
+            <p class="card-text">Una historia épica de amistad y aventura en un mundo abierto.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img src="img\rol\Dark soul.jpeg" style="width: 415px; height: 500px;" class="card-img-top"
+            alt="Dark Souls">
+          <div class="card-body">
+            <h5 class="card-title">Dark Souls</h5>
+            <p class="card-text">Un desafiante RPG de acción conocido por su dificultad y su mundo interconectado.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img src="img\rol\persona 5 royal.jpg" style="width: 415px; height: 500px;" class="card-img-top"
+            alt="Persona 5 Royal">
+          <div class="card-body">
+            <h5 class="card-title">Persona 5 Royal</h5>
+            <p class="card-text">Un RPG moderno que combina la vida escolar con la exploración de mundos sobrenaturales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Acordeón de géneros -->
+  <section id="generos" class="my-4 px-3 pt-5">
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+            Acción
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show">
+          <div class="accordion-body">Juegos llenos de adrenalina y combate.</div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo">
+            RPG
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse">
+          <div class="accordion-body">Historias profundas y desarrollo de personajes.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="footer mt-5 py-4 w-100 text-center">
+    <p>&copy; 2025 Catálogo de Videojuegos. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- JavaScript personalizado -->
+  <script src="js.js"></script>
+
+  <!-- Bootstrap JS con Popper incluido -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
