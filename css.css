@@ -1,0 +1,161 @@
+/* Estilos globales del cuerpo de la página */
+body {
+  scroll-behavior: smooth; /* Habilita el desplazamiento suave al navegar a anclas. */
+  background-color: rgb(178, 186, 187); /* Color de fondo si la imagen no carga o no cubre. */
+  background-image: url('img/back.jpg'); /* Imagen de fondo para el cuerpo. (Ruta corregida a '/') */
+  background-repeat: no-repeat; /* Evita que la imagen de fondo se repita. */
+  background-size: cover; /* Asegura que la imagen de fondo cubra todo el cuerpo. */
+  background-attachment: fixed; /* Fija la imagen de fondo mientras se hace scroll. */
+}
+
+/* Estilos de la barra de navegación (Navbar) */
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad. */
+  background-color: #ffffff !important; /* Fondo blanco para la navbar, forzado con !important. */
+  z-index: 1030; /* Asegura que la navbar esté por encima de otros elementos. */
+}
+
+/* Estilos de la marca o logo de la barra de navegación */
+.navbar-brand {
+  font-weight: bold; /* Texto en negrita. */
+  font-size: 1.5rem; /* Tamaño de fuente más grande. */
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-link {
+  color: #555; /* Color de texto gris oscuro. */
+  font-weight: 500; /* Grosor de fuente medio. */
+}
+
+/* Estilos para el enlace de navegación activo */
+.nav-link.active {
+  color: #0d6efd !important; /* Color de texto azul Bootstrap primario, forzado. */
+  background-color: #e0eefe !important; /* Color de fondo azul claro, forzado. */
+  border-radius: 5px; /* Bordes ligeramente redondeados. */
+}
+
+/* Estilos generales para las tarjetas (cards) */
+.card {
+  transition: transform 0.2s; /* Transición suave al pasar el ratón para efecto de hover. */
+  border-radius: 15px; /* Bordes redondeados para las tarjetas. */
+  overflow: hidden; /* Oculta el contenido que se desborda de los bordes redondeados. */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Sombra para las tarjetas. (Corregido '10px 20px' a '0 10px 20px') */
+}
+
+/* Efecto de hover para las tarjetas */
+.card:hover {
+  transform: translateY(-5px); /* Desplaza la tarjeta ligeramente hacia arriba al pasar el ratón. */
+}
+
+/* Estilos para las imágenes superiores de las tarjetas */
+.card-img-top {
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse, recortando si es necesario. */
+  height: 300px; /* Altura fija para todas las imágenes de las tarjetas. */
+}
+
+/* Estilos para los componentes Toast de Bootstrap */
+.toast {
+  background-color: #343a40; /* Fondo oscuro para el toast (gris oscuro de Bootstrap). */
+  color: white; /* Texto blanco. */
+}
+
+/* Estilos generales para los botones */
+.btn {
+  border-radius: 8px; /* Bordes redondeados para todos los botones. */
+}
+
+/* Estilos para los botones del acordeón de Bootstrap */
+.accordion-button {
+  font-weight: bold; /* Texto en negrita para los encabezados del acordeón. */
+}
+
+/*
+  Estilos para la Modal Personalizada
+  Define el comportamiento y apariencia de la ventana modal que no es de Bootstrap.
+*/
+
+/* Contenedor principal de la modal (fondo oscuro) */
+.modal {
+  display: none; /* Oculta la modal por defecto. */
+  position: fixed; /* Fija la modal en la ventana de visualización. */
+  z-index: 1050; /* Asegura que la modal esté por encima de la navbar y otros elementos. */
+  left: 0; /* Alinea la modal a la izquierda. */
+  top: 0; /* Alinea la modal en la parte superior. */
+  width: 100%; /* La modal ocupa todo el ancho de la pantalla. */
+  height: 100%; /* La modal ocupa toda la altura de la pantalla. */
+  overflow: auto; /* Permite el scroll si el contenido es demasiado grande. */
+  background-color: rgba(0,0,0,0.5); /* Fondo semitransparente oscuro. */
+}
+
+/* Contenido interno de la modal */
+.modal-content {
+  background-color: rgb(230, 194, 194); /* Color de fondo del contenido de la modal. (Consolidado) */
+  margin: 10% auto; /* Centra la modal vertical y horizontalmente con margen automático. */
+  padding: 20px; /* Espaciado interno del contenido. */
+  border-radius: 15px; /* Bordes redondeados para el contenido de la modal. (Consolidado) */
+  width: 30%; /* Ancho del contenido de la modal. */
+  max-width: 400px; /* Ancho máximo del contenido de la modal. */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el contenido de la modal. (Añadido) */
+}
+
+/* Estilos para el botón de cerrar la modal (la 'x') */
+.cerrar {
+  float: right; /* Alinea el botón a la derecha. */
+  font-size: 24px; /* Tamaño de fuente grande para la 'x'. */
+  cursor: pointer; /* Cambia el cursor a una mano al pasar por encima. */
+  color: #aaa; /* Color gris para la 'x'. (Añadido para mejor contraste) */
+}
+
+/* Efecto de hover para el botón de cerrar */
+.cerrar:hover,
+.cerrar:focus {
+  color: black; /* Cambia a negro al pasar el ratón o enfocar. */
+  text-decoration: none; /* Elimina la subrayado en hover/focus. */
+}
+
+
+/*
+  Estilos de la Barra de Desplazamiento Personalizada (Webkit)
+  Solo visible en navegadores basados en Webkit (Chrome, Safari, etc.).
+*/
+
+/* Ancho de la barra de desplazamiento */
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Estilo de la pista de la barra de desplazamiento */
+body::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color de fondo de la pista. */
+  border-radius: 10px; /* Bordes redondeados de la pista. */
+}
+
+/* Estilo del "pulgar" o controlador de la barra de desplazamiento */
+body::-webkit-scrollbar-thumb {
+  background-color: #5F6F52; /* Color del pulgar. */
+  border-radius: 10px; /* Bordes redondeados del pulgar. */
+  border: 3px solid #f1f1f1; /* Borde alrededor del pulgar. */
+}
+
+/*
+  Estilos del Pie de Página (Footer)
+*/
+.footer {
+  background-color: #2c3e50; /* Color de fondo oscuro (azul pizarra). */
+  color: #ecf0f1; /* Color de texto blanco casi puro. */
+  font-size: 1rem; /* Tamaño de fuente estándar. */
+  border-top: 3px solid #0d6efd; /* Borde superior azul primario. */
+  padding-top: 20px; /* Añade un poco de padding superior para separar el texto. */
+  padding-bottom: 20px; /* Añade un poco de padding inferior. */
+}
+
+/*
+  Estilos para el Título Principal del Catálogo
+*/
+.titulo-catalogo {
+  font-size: 2.8rem; /* Tamaño de fuente grande para el título. */
+  font-weight: 700; /* Negrita para el título. */
+  color: #2c3e50; /* Color de texto azul pizarra. */
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Sombra de texto suave para mejor legibilidad. */
+  margin-bottom: 20px; /* Margen inferior para separar el título del contenido. */
+}
